@@ -98,7 +98,6 @@ body {
 .radio-button:checked ~ .meme-img {
   width: 100%;
   height: 100%;
-  max-width: 1000px;
 }
 
 @media (min-width: 820px) {
@@ -127,9 +126,24 @@ body {
   }
 }
 
+@media (min-width: 1200px) {
+  .page {
+    padding: 100px;
+  }
+
+  .meme-img {
+    max-width: 0;
+    transition: max-width linear 0.3s, width linear 0.3s, height linear 0.3s;
+  }
+
+  .radio-button:checked ~ .meme-img {
+    max-width: 1000px;
+  }
+}
+
 @media (min-width: 1920px) {
   .page {
-    padding: 100px 70px;
+    padding: 150px;
     font-size: 60px;
   }
 
@@ -138,10 +152,44 @@ body {
     margin-bottom: 60px;
   }
 
+  .icon {
+    opacity: 0;
+    transition: transform linear 0.5s;
+  }
+
+  .memes-wrapper:hover .icon {
+    visibility: visible;
+    transition: opacity linear 0.5s;
+    opacity: 1;
+  }
+
+  .memes-wrapper:hover .meme-description {
+    color: black
+  }
+
   .meme {
     padding-top: 40px;
     padding-bottom: 40px;
     min-height: 150px;
+  }
+
+  .meme:hover > .meme-img {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+  }
+
+  .meme:hover > .meme-description .icon {
+    transform: rotate(45deg);
+    transition: transform linear 0.2s;
+  }
+
+  .meme:hover > .meme-description .meme-title {
+    margin-bottom: 40px;
+  }
+
+  .meme:active > .meme-description {
+    color: cadetblue;
   }
 
   .meme-title {
