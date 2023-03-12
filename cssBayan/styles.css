@@ -189,7 +189,7 @@ body {
 
   .meme:hover > .meme-description .icon {
     transform: rotate(45deg);
-    transition: transform linear .2s;
+    transition: transform linear .2s, opacity linear .5s;
   }
 
   .meme:hover > .meme-description .meme-title {
